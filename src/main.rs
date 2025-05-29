@@ -5,11 +5,6 @@ use rocket::fs::{relative, FileServer, NamedFile};
 
 use std::env;
 
-#[get("/")]
-async fn index() -> Option<NamedFile> {
-    NamedFile::open("static/index.html").await.ok()
-}
-
 #[launch]
 fn rocket() -> _ {
     let figment = rocket::Config::figment()
